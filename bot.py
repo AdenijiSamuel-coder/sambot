@@ -17,12 +17,12 @@ def send_welcome(message):
 def send_welcome(message):
     bot.reply_to(message, 'To use this bot, send it a username')
 
- @bot.message_handler(func=lambda msg: msg.text is not None and '@'  in msg.text)
- def at_answer(message):
-     texts = message.text.split()
-     at_text = find_at(texts)
+@bot.message_handler(func=lambda msg: msg.text is not None and '@'  in msg.text)
+def at_answer(message):
+    texts = message.text.split()
+    at_text = find_at(texts)
 
-     bot.reply_to(message, 'https://www.instagram.com/{}'.format(at_text[1:]))
+    bot.reply_to(message, 'https://www.instagram.com/{}'.format(at_text[1:]))
 
 while True:
     try:
